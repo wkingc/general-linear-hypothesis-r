@@ -31,8 +31,6 @@ package_loader <- function(x, ...) {
 packages <- c("knitr", "bookdown", "kableExtra", "magrittr", "DT", "dplyr", "multcomp")
 
 invisible(sapply(X = packages, FUN = package_loader, character.only = TRUE))
-
-options(scipen = 5)
 ```
 
 # Data Generating Process
@@ -146,6 +144,8 @@ datatable(dDM, escape = FALSE,
 
 # Tests of the General Linear Hypothesis
 
+## A Simple Example
+
 Under the dummy coding scheme, the mean of $y$ for each level of the categorical variable can be derived from the linear predictor.
 
 * The mean value of $y$ when the categorical variable is <i>low</i> is $\mu_{x=l} = E[y|x_m = 0, x_h = 0] = \alpha$.
@@ -186,6 +186,8 @@ mTest <- glht(model = fit, linfct = mMat)
 summary(mTest)
 ```
 
+## A More Complicated Example
+
 Specifying linear hypotheses allows us to test any number of effects inferentially.
 
 * $H_0: \mu_{x=l} - \mu_{x = h} = \alpha - (\alpha + \beta_2) = -\beta_2 = 0$ tests the null hypothesis that the mean value of $y$ in the referent category <i>low</i> ($x = l$) is the same as the mean value of $y$ in the <i>high</i> category ($x = h$).
@@ -202,7 +204,7 @@ oTest <- glht(model = fit, linfct = oMat)
 summary(oTest)
 ```
 
-# Multiple Comparison
+# Multiple Comparisons
 
 Unless the goal is to publish in the Journal of Irreproducible Results, an analyst should adjust for simultaneously testing multiple hypotheses.
 

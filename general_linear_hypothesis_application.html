@@ -214,9 +214,7 @@ pre code {
 
 packages &lt;- c(&quot;knitr&quot;, &quot;bookdown&quot;, &quot;kableExtra&quot;, &quot;magrittr&quot;, &quot;DT&quot;, &quot;dplyr&quot;, &quot;multcomp&quot;)
 
-invisible(sapply(X = packages, FUN = package_loader, character.only = TRUE))
-
-options(scipen = 5)</code></pre>
+invisible(sapply(X = packages, FUN = package_loader, character.only = TRUE))</code></pre>
 </div>
 <div id="data-generating-process" class="section level1">
 <h1>Data Generating Process</h1>
@@ -372,6 +370,8 @@ datatable(dDM, escape = FALSE,
 </div>
 <div id="tests-of-the-general-linear-hypothesis" class="section level1">
 <h1>Tests of the General Linear Hypothesis</h1>
+<div id="a-simple-example" class="section level2">
+<h2>A Simple Example</h2>
 <p>Under the dummy coding scheme, the mean of <span class="math inline">\(y\)</span> for each level of the categorical variable can be derived from the linear predictor.</p>
 <ul>
 <li>The mean value of <span class="math inline">\(y\)</span> when the categorical variable is <i>low</i> is <span class="math inline">\(\mu_{x=l} = E[y|x_m = 0, x_h = 0] = \alpha\)</span>.</li>
@@ -424,13 +424,16 @@ summary(mTest)</code></pre>
 ## Fit: lm(formula = Y ~ X, data = d)
 ## 
 ## Linear Hypotheses:
-##        Estimate Std. Error t value    Pr(&gt;|t|)    
-## 1 == 0   0.9951     0.1680   5.923 0.000000135 ***
-## 2 == 0   1.0819     0.1680   6.439 &lt; 0.0000001 ***
-## 3 == 0   1.7672     0.1655  10.676 &lt; 0.0000001 ***
+##        Estimate Std. Error t value Pr(&gt;|t|)    
+## 1 == 0   0.9951     0.1680   5.923 1.35e-07 ***
+## 2 == 0   1.0819     0.1680   6.439  &lt; 1e-07 ***
+## 3 == 0   1.7672     0.1655  10.676  &lt; 1e-07 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## (Adjusted p values reported -- single-step method)</code></pre>
+</div>
+<div id="a-more-complicated-example" class="section level2">
+<h2>A More Complicated Example</h2>
 <p>Specifying linear hypotheses allows us to test any number of effects inferentially.</p>
 <ul>
 <li><span class="math inline">\(H_0: \mu_{x=l} - \mu_{x = h} = \alpha - (\alpha + \beta_2) = -\beta_2 = 0\)</span> tests the null hypothesis that the mean value of <span class="math inline">\(y\)</span> in the referent category <i>low</i> (<span class="math inline">\(x = l\)</span>) is the same as the mean value of <span class="math inline">\(y\)</span> in the <i>high</i> category (<span class="math inline">\(x = h\)</span>).</li>
@@ -459,8 +462,9 @@ summary(oTest)</code></pre>
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## (Adjusted p values reported -- single-step method)</code></pre>
 </div>
-<div id="multiple-comparison" class="section level1">
-<h1>Multiple Comparison</h1>
+</div>
+<div id="multiple-comparisons" class="section level1">
+<h1>Multiple Comparisons</h1>
 <p>Unless the goal is to publish in the Journal of Irreproducible Results, an analyst should adjust for simultaneously testing multiple hypotheses.</p>
 <p>The multiple testing problem occurs because our fixed and known probability of falsely rejecting a true null hypothesis (usually <span class="math inline">\(5\%\)</span>) applies only to a single test and increases as a function of the total number of inferences. For example, suppose we do 20 simultaneous tests, each with a <span class="math inline">\(5\%\)</span> probability of being a false discovery. In that case, we expect at least one of these inferences will result in falsely rejecting a true null hypothesis.</p>
 <p>There are two commonly used methods for adjusting for multiple comparisons. The first controls for the probability of falsely rejecting at least one true null hypothesis among all hypotheses tested, also known as the family-wise error rate (FWER), and typified by the Bonferroni correction <span class="citation">(Dunn <a href="#ref-dunn1961multiple" role="doc-biblioref">1961</a>)</span>. The second controls the probability of falsely rejecting at least one true null hypothesis among rejected hypotheses, known as the false discovery rate (FDR) <span class="citation">(Benjamini and Hochberg <a href="#ref-benjamini1995controlling" role="doc-biblioref">1995</a>)</span>.</p>
