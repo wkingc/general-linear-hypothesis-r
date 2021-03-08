@@ -204,7 +204,7 @@ summary(oTest)
 
 # Multiple Comparison
 
-Unless the goal is to publish in the Journal of Irreproducible Results, an analyst must adjust for simultaneously testing multiple hypotheses.
+Unless the goal is to publish in the Journal of Irreproducible Results, an analyst should adjust for simultaneously testing multiple hypotheses.
 
 The multiple testing problem occurs because our fixed and known probability of falsely rejecting a true null hypothesis (usually $5\%$) applies only to a single test and increases as a function of the total number of inferences. For example, suppose we do 20 simultaneous tests, each with a $5\%$ probability of being a false discovery. In that case, we expect at least one of these inferences will result in falsely rejecting a true null hypothesis.
 

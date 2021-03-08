@@ -461,7 +461,7 @@ summary(oTest)</code></pre>
 </div>
 <div id="multiple-comparison" class="section level1">
 <h1>Multiple Comparison</h1>
-<p>Unless the goal is to publish in the Journal of Irreproducible Results, an analyst must adjust for simultaneously testing multiple hypotheses.</p>
+<p>Unless the goal is to publish in the Journal of Irreproducible Results, an analyst should adjust for simultaneously testing multiple hypotheses.</p>
 <p>The multiple testing problem occurs because our fixed and known probability of falsely rejecting a true null hypothesis (usually <span class="math inline">\(5\%\)</span>) applies only to a single test and increases as a function of the total number of inferences. For example, suppose we do 20 simultaneous tests, each with a <span class="math inline">\(5\%\)</span> probability of being a false discovery. In that case, we expect at least one of these inferences will result in falsely rejecting a true null hypothesis.</p>
 <p>There are two commonly used methods for adjusting for multiple comparisons. The first controls for the probability of falsely rejecting at least one true null hypothesis among all hypotheses tested, also known as the family-wise error rate (FWER), and typified by the Bonferroni correction <span class="citation">(Dunn <a href="#ref-dunn1961multiple" role="doc-biblioref">1961</a>)</span>. The second controls the probability of falsely rejecting at least one true null hypothesis among rejected hypotheses, known as the false discovery rate (FDR) <span class="citation">(Benjamini and Hochberg <a href="#ref-benjamini1995controlling" role="doc-biblioref">1995</a>)</span>.</p>
 <p>Table <a href="#tab:resTab">2</a> shows the inferential results after adjusting for both the FWER and FDR.</p>
