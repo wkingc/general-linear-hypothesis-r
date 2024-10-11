@@ -1,7 +1,7 @@
 ---
 title: "Tests of the General Linear Hypothesis"
 author: "Wade K. Copeland"
-bibliography: general_linear_hypothesis_application.bib
+bibliography: general_linear_hypothesis.bib
 biblio-style: apalike
 link-citations: yes
 output:  
@@ -10,7 +10,7 @@ output:
     highlight: textmate
     code_folding: show
     mathjax: default
-    self_contained: FALSE
+    self_contained: TRUE
     number_sections: FALSE
 ---
 
