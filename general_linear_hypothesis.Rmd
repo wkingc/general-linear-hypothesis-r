@@ -18,7 +18,7 @@ output:
 
 When parameters of a general linear model are estimated, analysts often report the main effects.  However, sometimes the hypothesis of interest is a linear combination of the main effects that is not displayed by default in a standard regression table.  Testing many hypotheses from the same linear model is especially relevant when an analyst fits a model using categorical variables where many post-hoc hypotheses are of interest.  This presentation will show how to code a categorical variable for use in the general linear model and use tests of the so-called general linear hypothesis to test any number of hypotheses about the effects [@fox2008applied].
 
-This presentation uses the R programming language and assumes the end-user is taking advantage of RStudio IDE to compile their R markdown files into HTML [@R2020; @rstudio2020].  All of the files needed to reproduce these results can be downloaded from the Git repository <code>git clone <span>https</span>://git.waderstats.com/general_linear_hypothesis_application/</code>.
+This presentation uses the R programming language and assumes the end-user is taking advantage of RStudio IDE to compile their R markdown files into HTML [@R2020; @rstudio2020].  All of the files needed to reproduce these results can be downloaded from the Git repository <a href="https://github.com/wkingc/general-linear-hypothesis" target="_blank">https://github.com/wkingc/general-linear-hypothesis</a>.
 
 # Required Libraries
 
@@ -228,8 +228,8 @@ resTab <- cbind(resTab, p.adjust(resTab[, 4], method = "bonferroni"), p.adjust(r
 colnames(resTab) <- c("Estimate", "Std. Error", "t value", "Pr(>|t|)", "FWER Pr(>|t|)", "FDR Pr(>|t|)")
 
 resTab %>%
-  kbl(escape = FALSE, caption = "The results for all analyses with inferential results controlling the family-wise error rate (FWER) and false discovery rate (FDR).") %>%
-  kable_classic_2(full_width = F)
+    kbl(escape = FALSE, caption = "The results for all analyses with inferential results controlling the family-wise error rate (FWER) and false discovery rate (FDR).") %>%
+    kable_classic_2(full_width = F)
 ```
 
 # References
