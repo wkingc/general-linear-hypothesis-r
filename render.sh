@@ -1,0 +1,1 @@
+quarto render general_linear_hypothesis.qmd
