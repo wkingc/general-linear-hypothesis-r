@@ -3,7 +3,7 @@ title: "Tests of the General Linear Hypothesis in R"
 author: "Wade K. Copeland"
 date: last-modified
 date-format: "MMMM DD, YYYY"
-bibliography: general_linear_hypothesis.bib
+bibliography: references.bib
 output-file: index.html
 format:
     html:
