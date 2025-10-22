@@ -1,1 +1,1 @@
-quarto render general_linear_hypothesis.qmd
+quarto render general_linear_hypothesis_r.qmd
